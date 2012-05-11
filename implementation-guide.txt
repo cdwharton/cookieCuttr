@@ -1,17 +1,23 @@
 What is CookieCuttr?
 ##########################
 
-I've been trying to come up with a way of implementing a sensible solution to the impending EU cookie law due to be enforced on 25th May. I wanted to develop something I could use easily and add to all of my client websites and my own websites with a really quick and configurable implementation.
+I've been trying to come up with a way of implementing a sensible solution to the impending EU cookie law due to be enforced on 26th May. I wanted to develop something I could use easily and add to all of my client websites and my own websites with a really quick and configurable implementation.
 
 I've come up with a tailorable solution, depending on how you or your client chooses to “interpret” the new law.
 
 I've interpreted the law as follows:
 
-    The website is only going to store cookies that are seen as essential to the functionality of the website. e.g. a shopping cart requires cookies for login, remembering cart items - they’re ok
-    The website is not going to store any other cookies unless the website visitor accepts - sadly this means analytics will not be enabled :(
+- The website is only going to store cookies that are seen as essential to the functionality of the website. e.g. a shopping cart requires cookies for login, remembering cart items - they’re ok
+- The website is not going to store any other cookies unless the website visitor accepts - sadly this means analytics will not be enabled :(
 
-I'm certainly no jQuery guru, but everything is laid out in a sensible fashion which I’m sure any designer or developer can pick up and use straight away or optimise as they see fit.
+You can read more about the EU Cookie Law here:
+http://www.123-reg.co.uk/blog/security-issues/is-the-eus-cookie-law-confusing-you-too/
+http://www.heartinternet.co.uk/blog/2012/05/how-to-comply-with-the-new-eu-cookie-law/
+http://www.ico.gov.uk/for_organisations/privacy_and_electronic_communications/the_guide/cookies.aspx
 
+To try and explain the impact of declining (or not accepting) cookies I've added the following on to my company website in the privacy policy:
+
+"PLEASE NOTE, not accepting the below cookies will severely harm our business, we will no longer be able to track visits to our website, see what the most popular pages are or devices looking at our website, it will be the equivalent of running a sweet shop, blindfolded with no stock-taking facility available."
 
 
 
