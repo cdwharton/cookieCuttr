@@ -1,0 +1,157 @@
+What is CookieCuttr?
+##########################
+
+I've been trying to come up with a way of implementing a sensible solution to the impending EU cookie law due to be enforced on 25th May. I wanted to develop something I could use easily and add to all of my client websites and my own websites with a really quick and configurable implementation.
+
+I've come up with a tailorable solution, depending on how you or your client chooses to “interpret” the new law.
+
+I've interpreted the law as follows:
+
+    The website is only going to store cookies that are seen as essential to the functionality of the website. e.g. a shopping cart requires cookies for login, remembering cart items - they’re ok
+    The website is not going to store any other cookies unless the website visitor accepts - sadly this means analytics will not be enabled :(
+
+I'm certainly no jQuery guru, but everything is laid out in a sensible fashion which I’m sure any designer or developer can pick up and use straight away or optimise as they see fit.
+
+
+
+
+What do you need?
+##########################
+
+    jQuery library (http://jquery.com)
+    The jQuery Cookie plugin (https://github.com/carhartl/jquery-cookie)
+    This plugin - 1 JavaScript file and 1 CSS file
+    Espresso or Notepad or your code editor of choice :)
+
+
+
+
+Implementation
+##########################
+
+
+If you don't mind a number of http connections, include all of the above individually as follows in the <head> section of your HTML (HTML5 markup).
+<script src="//ajax.googleapis.com/ajax/ libs/jquery/1.7.1/jquery.js"></script>
+<script>window.jQuery || document.write("<script src='assets/js/libs/jquery-1.7.1.min.js'>\x3C/script>")</script>
+<script src="jquery.cookies.js"></script>
+<script src="jquery.cookies.js"></script>
+<script src="jquery.cookiecuttr.js"></script>
+
+These files must all run BEFORE any other javascript on the page, I know some people like to add jQuery to the end of the document to speed up page load and you can do if you can control the third party software on your website, if you can’t its best to add it to the head, I’ll detail exactly why later.
+
+Add in the link to the CSS file underneath all of your other CSS files
+<link rel="stylesheet" href="cookiecuttr.css">
+
+For any JavaScript you want to disable, you need to wrap the following if statement around it:
+if (jQuery.cookie('cc_cookie_accept') == "cc_cookie_accept") {
+// insert the code you do not want to run UNTIL cookies are accepted here
+}
+
+For example, lets take the most common example, Google Analytics, you can do the following:
+<script>
+if (jQuery.cookie('cc_cookie_accept') == "cc_cookie_accept") {
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document. getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+}
+</script>
+
+You just then need to call the function to run CookieCuttr - you can add this to your page, anywhere underneath the initial files you loaded in the head within the following code, the default setup will show the standard analytics message:
+$(document).ready(function () {
+$.cookieCuttr();
+});
+
+You can also add this in to a central JavaScript file you may use to run your website.
+
+I’ve included a generic CSS file which will give you some essence of style out of the box, with responsive media queries for tablet and mobile breakpoints.
+
+I've also setup a jQuery variable that you can wrap around any jQuery elements:
+if( $.cookieAccepted() ) {
+// insert the code you do not want to run UNTIL cookies are accepted here
+}
+
+
+
+
+Options
+##########################
+
+
+I’ve added the following options within the plugin, these will give you ultimate control when deploying the plugin.
+
+cookieCutter - if you’d like to actively hide parts of your website set this to true, for example say you use a comments system that inserts cookies, you can put the div name in below to replace it with a cookie warning message.
+
+cookieAnalytics - if you are just using a simple analytics package you can set this to true, it displays a simple default message with no privacy policy link - this is set to true by default.
+
+cookieDeclineButton - if you’d like a decline button to (ironically) write a cookie into the browser then set this to true.
+
+cookieOverlayEnabled - don't want a discreet toolbar? this makes the whole message into a 100% height
+
+cookiePolicyLink - if applicable, enter the link to your privacy policy in here - this is as soon as cookieAnalytics is set to false;
+
+cookieMessage - edit the message you want to appear in the cookie bar, remember to keep the {{cookiePolicyLink}} variable in tact so it inserts your privacy policy link.
+
+cookieAnalyticsMessage - edit the message you want to appear, this is the default message.
+
+cookieWhatAreTheyLink - edit the link for the 'What are Cookies' link.
+
+cookieErrorMessage - edit the message you’d like to appear in place of the functionality
+
+cookieDisable - list elements comma separated in here that you want to disable, this will only work if cookieCutter is set to true.
+
+
+
+
+
+Implementing on a CMS?
+##########################
+
+
+I’ve tested the above on WordPress and it works fine, obviously you only need to load the files that the CMS doesn’t use. I’ve found that if you implement the code in the <head> of the HTML and you are using a third party plugin (that you don’t want to start hacking apart) that the third party cookie is not stored in the browser. Be warned though, I’ve only tested this on my implementations and you need to test this on every website you implement.
+
+
+
+
+Demos
+##########################
+
+
+
+Just Analytics?
+
+Options:
+cookieAnalytics: true,
+cookieAnalyticsMessage: "message",
+cookieWhatAreTheyLink: '/insert-link/'
+
+
+You have a privacy/cookie policy?
+
+Options:
+cookieAnalytics: false,
+cookiePolicyLink: ‘/insert-link/’,
+cookieMessage: Message <a href="{{cookiePolicyLink}}" title="read about our cookies">read about them here</a>
+
+Disable parts of your page and display a message?
+
+Options:
+cookieCutter: true,
+cookieAnalytics: false,
+cookiePolicyLink: ‘/insert-link/’,
+cookieDisable: ‘.divnamehere’
+
+You want an explicit decline button? 
+
+Options:
+cookieDeclineButton: true
+
+You want an explicit cookie reset button? 
+
+Options:
+cookieResetButton: true
