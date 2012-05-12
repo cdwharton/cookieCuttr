@@ -60,11 +60,8 @@
         var cookieDisable = options.cookieDisable; 
         var cookieWhatAreTheyLink = options.cookieWhatAreTheyLink;
         
-
+		
         // cookie identifier
-
-        var $cookieDeclined = $.cookie('cc_cookie_decline') == "cc_cookie_decline";
-
         var $cookieAccepted = $.cookie('cc_cookie_accept') == "cc_cookie_accept";
         $.cookieAccepted = function () {
             return $cookieAccepted;
