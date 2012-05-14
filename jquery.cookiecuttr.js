@@ -35,7 +35,8 @@
             cookieAnalyticsMessage: 'We use cookies, just to track visits to our website, we store no personal details. To use the website as intended please...',
             cookieErrorMessage: "We\'re sorry, this feature places cookies in your browser and has been disabled. <br>To continue using this functionality, please",
             cookieWhatAreTheyLink: "http://www.allaboutcookies.org/",
-            cookieDisable: ''
+            cookieDisable: '',
+            cookieExpires: 365
 
 
         };
@@ -59,6 +60,7 @@
         var cookieErrorMessage = options.cookieErrorMessage;
         var cookieDisable = options.cookieDisable; 
         var cookieWhatAreTheyLink = options.cookieWhatAreTheyLink;
+        var cookieExpires = options.cookieExpires;
         
 		
         // cookie identifier
@@ -110,10 +112,12 @@
             e.preventDefault();
             if (($(this).attr("href") == "#decline")) {
                 $.cookie("cc_cookie_decline", "cc_cookie_decline", {
+                    expires: cookieExpires,
                     path: '/'
                 });
             } else {
                 $.cookie("cc_cookie_accept", "cc_cookie_accept", {
+                    expires: cookieExpires,
                     path: '/'
                 });
             }
