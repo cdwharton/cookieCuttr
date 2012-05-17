@@ -12,7 +12,6 @@ I've interpreted the law as follows:
 
 You can read more about the EU Cookie Law here:
 http://www.123-reg.co.uk/blog/security-issues/is-the-eus-cookie-law-confusing-you-too/
-http://www.heartinternet.co.uk/blog/2012/05/how-to-comply-with-the-new-eu-cookie-law/
 http://www.ico.gov.uk/for_organisations/privacy_and_electronic_communications/the_guide/cookies.aspx
 
 To try and explain the impact of declining (or not accepting) cookies I've added the following on to my company website in the privacy policy:
@@ -115,6 +114,13 @@ cookieErrorMessage - edit the message you’d like to appear in place of the fun
 
 cookieDisable - list elements comma separated in here that you want to disable, this will only work if cookieCutter is set to true.
 
+cookieAcceptButtonText - you can change the text of the green accept button.
+
+cookieDeclineButtonText - you can change the text of the red decline button.
+
+cookieResetButtonText - you can change the text of the orange reset button.
+
+cookieWhatAreLinkText - you can change the text of the "What are Cookies" link shown on Google Analytics message. 
 
 
 

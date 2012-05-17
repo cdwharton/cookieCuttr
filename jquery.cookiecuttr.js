@@ -36,7 +36,13 @@
             cookieErrorMessage: "We\'re sorry, this feature places cookies in your browser and has been disabled. <br>To continue using this functionality, please",
             cookieWhatAreTheyLink: "http://www.allaboutcookies.org/",
             cookieDisable: '',
-            cookieExpires: 365
+            cookieExpires: 365,
+            cookieAcceptButtonText: "ACCEPT COOKIES",
+            cookieDeclineButtonText: "DECLINE COOKIES",
+            cookieResetButtonText: "RESET COOKIES FOR THIS WEBSITE",
+            cookieWhatAreLinkText: "What are cookies?"
+            
+            
 
 
         };
@@ -61,6 +67,11 @@
         var cookieDisable = options.cookieDisable; 
         var cookieWhatAreTheyLink = options.cookieWhatAreTheyLink;
         var cookieExpires = options.cookieExpires;
+        var cookieAcceptButtonText = options.cookieAcceptButtonText;
+        var cookieDeclineButtonText = options.cookieDeclineButtonText;
+        var cookieResetButtonText = options.cookieResetButtonText;
+        var cookieWhatAreLinkText = options.cookieWhatAreLinkText;
+        
         
 		
         // cookie identifier
@@ -78,14 +89,14 @@
         if (($cookieAccepted) || ($cookieDeclined)) {
 			// write cookie reset button
 			 if(cookieResetButton) {
-			 	$('body').prepend('<div class="cc-cookies"><a href="#" class="cc-cookie-reset">Reset cookies for this website</a></div>');
+			 	$('body').prepend('<div class="cc-cookies"><a href="#" class="cc-cookie-reset">'+cookieResetButtonText+'</a></div>');
 			 } else {
 			     var cookieResetButton = "";
 			 }            
         } else {
             // write cookie decline button
             if (cookieDeclineButton) {
-                var cookieDecline = '<a href="#decline" class="cc-cookie-decline">Decline Cookies</a>';
+                var cookieDecline = '<a href="#decline" class="cc-cookie-decline">'+cookieDeclineButtonText+'</a>';
             } else {
                 var cookieDecline = "";
             }
@@ -98,12 +109,12 @@
 
             // add message to just after opening body tag
             if (cookieAnalytics) {
-                $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + ' <a href="#accept" class="cc-cookie-accept">Accept Cookies</a> ' + cookieDecline + '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)">What are cookies?</a></div>');
+                $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + ' <a href="#accept" class="cc-cookie-accept">'+cookieAcceptButtonText+'</a> ' + cookieDecline + '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)">'+cookieWhatAreLinkText+'</a></div>');
             } else {
-                $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieMessage + ' <a href="#accept" class="cc-cookie-accept">Accept Cookies</a> ' + cookieDecline + '</div>');
+                $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieMessage + ' <a href="#accept" class="cc-cookie-accept">'+cookieAcceptButtonText+'</a> ' + cookieDecline + '</div>');
             }
             if (cookieCutter) {
-                $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + ' <a href="#accept" class="cc-cookie-accept">ACCEPT COOKIES</a></div>');
+                $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + ' <a href="#accept" class="cc-cookie-accept">'+cookieAcceptButtonText+'</a></div>');
             }
         }
 
