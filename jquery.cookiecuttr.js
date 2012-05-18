@@ -40,8 +40,8 @@
             cookieAcceptButtonText: "ACCEPT COOKIES",
             cookieDeclineButtonText: "DECLINE COOKIES",
             cookieResetButtonText: "RESET COOKIES FOR THIS WEBSITE",
-            cookieWhatAreLinkText: "What are cookies?"
-            
+            cookieWhatAreLinkText: "What are cookies?",
+            cookieNotificationLocationBottom: false // top or bottom - they are your only options, so true for bottom, false for top            
             
 
 
@@ -71,6 +71,7 @@
         var cookieDeclineButtonText = options.cookieDeclineButtonText;
         var cookieResetButtonText = options.cookieResetButtonText;
         var cookieWhatAreLinkText = options.cookieWhatAreLinkText;
+        var cookieNotificationLocationBottom = options.cookieNotificationLocationBottom;
         
         
 		
@@ -106,6 +107,8 @@
             } else {
                 var cookieOverlay = "";
             }
+            
+            
 
             // add message to just after opening body tag
             if (cookieAnalytics) {
@@ -116,6 +119,12 @@
             if (cookieCutter) {
                 $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + ' <a href="#accept" class="cc-cookie-accept">'+cookieAcceptButtonText+'</a></div>');
             }
+        }
+        
+        // if bottom is true, switch div to bottom
+        if(cookieNotificationLocationBottom) {
+        	$('div.cc-cookies').css("top", "auto");
+        	$('div.cc-cookies').css("bottom", "0");
         }
 
         // setting the cookies

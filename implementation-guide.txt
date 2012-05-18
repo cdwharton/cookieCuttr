@@ -28,10 +28,10 @@ We also have a WordPress version at: http://cookiecuttr.com/wordpress-plugin/
 What do you need?
 ##########################
 
-    jQuery library (http://jquery.com)
-    The jQuery Cookie plugin (https://github.com/carhartl/jquery-cookie)
-    This plugin - 1 JavaScript file and 1 CSS file
-    Espresso or Notepad or your code editor of choice :)
+    - jQuery library (http://jquery.com)
+    - The jQuery Cookie plugin (https://github.com/carhartl/jquery-cookie)
+    - This plugin - 1 JavaScript file and 1 CSS file
+    - Espresso or Notepad or your code editor of choice :)
 
 
 
@@ -41,7 +41,7 @@ Implementation
 
 
 If you don't mind a number of http connections, include all of the above individually as follows in the <head> section of your HTML (HTML5 markup).
-<script src="//ajax.googleapis.com/ajax/ libs/jquery/1.7.1/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
 <script>window.jQuery || document.write("<script src='assets/js/libs/jquery-1.7.1.min.js'>\x3C/script>")</script>
 <script src="jquery.cookie.js"></script>
 <script src="jquery.cookiecuttr.js"></script>
@@ -111,6 +111,8 @@ cookieAnalyticsMessage - edit the message you want to appear, this is the defaul
 cookieWhatAreTheyLink - edit the link for the 'What are Cookies' link.
 
 cookieErrorMessage - edit the message you’d like to appear in place of the functionality
+
+cookieNotificationLocationBottom - this is false by default, change it to true and the cookie notification bar will show at the bottom of the page instead.
 
 cookieDisable - list elements comma separated in here that you want to disable, this will only work if cookieCutter is set to true.
 
