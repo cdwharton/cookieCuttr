@@ -112,7 +112,7 @@ cookieWhatAreTheyLink - edit the link for the 'What are Cookies' link.
 
 cookieErrorMessage - edit the message you’d like to appear in place of the functionality
 
-cookieNotificationLocationBottom - this is false by default, change it to true and the cookie notification bar will show at the bottom of the page instead.
+cookieNotificationLocationBottom - this is false by default, change it to true and the cookie notification bar will show at the bottom of the page instead, please note this will remain at the top for mobile and iOS devices and Internet Explorer 6.
 
 cookieDisable - list elements comma separated in here that you want to disable, this will only work if cookieCutter is set to true.
 
