@@ -1,6 +1,8 @@
 What is CookieCuttr?
 ##########################
 
+NEW!! Due to further developments on the EU Cookie law, I've added a slightly softer option, an accept/decline message that you can display on just your policy page. You can use this on its own or in conjunction with a standard (or discreet) message on the rest of your website by combining the options below, take a look at the demos.
+
 I've been trying to come up with a way of implementing a sensible solution to the impending EU cookie law due to be enforced on 26th May. I wanted to develop something I could use easily and add to all of my client websites and my own websites with a really quick and configurable implementation.
 
 I've come up with a tailorable solution, depending on how you or your client chooses to “interpret” the new law.
@@ -9,6 +11,8 @@ I've interpreted the law as follows:
 
 - The website is only going to store cookies that are seen as essential to the functionality of the website. e.g. a shopping cart requires cookies for login, remembering cart items - they’re ok
 - The website is not going to store any other cookies unless the website visitor accepts - sadly this means analytics will not be enabled :(
+
+UPDATE!! Due to further developments on the EU Cookie law, I've added a slightly softer option, an accept/decline message that you can display on just your policy page.
 
 You can read more about the EU Cookie Law here:
 http://www.123-reg.co.uk/blog/security-issues/is-the-eus-cookie-law-confusing-you-too/
@@ -100,6 +104,10 @@ cookieAnalytics - if you are just using a simple analytics package you can set t
 
 cookieDeclineButton - if you’d like a decline button to (ironically) write a cookie into the browser then set this to true.
 
+cookieAcceptButton - set this to true to hide the accept button, its set to false by default
+
+cookieResetButton - if you’d like a reset button to delete the accept or decline cookies then set this to true.
+
 cookieOverlayEnabled - don't want a discreet toolbar? this makes the whole message into a 100% height
 
 cookiePolicyLink - if applicable, enter the link to your privacy policy in here - this is as soon as cookieAnalytics is set to false;
@@ -122,9 +130,17 @@ cookieDeclineButtonText - you can change the text of the red decline button.
 
 cookieResetButtonText - you can change the text of the orange reset button.
 
-cookieWhatAreLinkText - you can change the text of the "What are Cookies" link shown on Google Analytics message. 
+cookieWhatAreLinkText - you can change the text of the "What are Cookies" link shown on Google Analytics message.
 
+cookiePolicyPage - set this to true to display the message you want to appear on your privacy or cookie policy page.
 
+cookiePolicyPageMessage - edit the message you want to appear on your policy page.
+
+cookieDiscreetLink - false by default, set to true to enable
+
+cookieDiscreetLinkText - edit the text you want to appear on the discreet option.
+
+cookieDiscreetPosition - set to topleft by default, you can also set topright, bottomleft, bottomright. 
 
 
 Implementing on a CMS?
@@ -175,3 +191,17 @@ You want an explicit cookie reset button?
 
 Options:
 cookieResetButton: true
+
+You want a different message on your policy page?
+
+Options:
+cookiePolicyPage: true,
+cookieDeclineButton: true,
+cookiePolicyPageMessage: 'You can change the message here'
+
+You want a really discreet box, which you can position? View
+
+Options:
+cookieDiscreetLink: true,
+cookieDiscreetPosition: "topright",
+cookiePolicyLink: "/privacy-policy/"
