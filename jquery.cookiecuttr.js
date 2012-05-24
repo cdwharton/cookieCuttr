@@ -171,7 +171,7 @@
         // setting the cookies
         $('.cc-cookie-accept, .cc-cookie-decline').click(function (e) {
             e.preventDefault();
-            if (($(this).attr("href") == "#decline")) {
+            if ($(this).is('[href$=#decline]')) {
                 $.cookie("cc_cookie_decline", "cc_cookie_decline", {
                     expires: cookieExpires,
                     path: '/'
