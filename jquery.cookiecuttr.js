@@ -94,6 +94,27 @@
         $.cookieDeclined = function () {
             return $cookieDeclined;
         };
+        
+        
+        // write cookie accept button
+        if (cookieAcceptButton) {
+            var cookieAccept = ' <a href="#accept" class="cc-cookie-accept">'+cookieAcceptButtonText+'</a> ';
+        } else {
+            var cookieAccept = "";
+        }
+        // write cookie decline button
+        if (cookieDeclineButton) {
+            var cookieDecline = ' <a href="#decline" class="cc-cookie-decline">'+cookieDeclineButtonText+'</a> ';
+        } else {
+            var cookieDecline = "";
+        }
+        
+        // write extra class for overlay
+        if (cookieOverlayEnabled) {
+            var cookieOverlay = 'cc-overlay';
+        } else {
+            var cookieOverlay = "";
+        }
 
 
         if (($cookieAccepted) || ($cookieDeclined)) {
@@ -104,25 +125,7 @@
 			     var cookieResetButton = "";
 			 }            
         } else {
-            // write cookie accept button
-            if (cookieAcceptButton) {
-                var cookieAccept = ' <a href="#accept" class="cc-cookie-accept">'+cookieAcceptButtonText+'</a> ';
-            } else {
-                var cookieAccept = "";
-            }
-            // write cookie decline button
-            if (cookieDeclineButton) {
-                var cookieDecline = ' <a href="#decline" class="cc-cookie-decline">'+cookieDeclineButtonText+'</a> ';
-            } else {
-                var cookieDecline = "";
-            }
             
-            // write extra class for overlay
-            if (cookieOverlayEnabled) {
-                var cookieOverlay = 'cc-overlay';
-            } else {
-                var cookieOverlay = "";
-            }
             
             
 
@@ -157,9 +160,11 @@
             } else if ((!cookieAnalytics) && (!cookieDiscreetLink) ) { // show privacy policy option
                 $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieMessage + cookieAccept + cookieDecline + '</div>');
             }
-            if (cookieCutter) {
-                $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + cookieAccept +'</div>');
-            }
+            
+        }
+        
+        if ( (cookieCutter) && ( ($cookieDeclined) || (!$cookieAccepted) ) ) {
+            $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + cookieAccept +'</div>');
         }
         
         // if bottom is true, switch div to bottom
@@ -169,14 +174,22 @@
         }
 
         // setting the cookies
+        
+        // for top bar
         $('.cc-cookie-accept, .cc-cookie-decline').click(function (e) {
             e.preventDefault();
             if ($(this).is('[href$=#decline]')) {
+	            $.cookie("cc_cookie_accept", null, {
+	                path: '/'
+	            });
                 $.cookie("cc_cookie_decline", "cc_cookie_decline", {
                     expires: cookieExpires,
                     path: '/'
                 });
             } else {
+            	$.cookie("cc_cookie_decline", null, {
+            	    path: '/'
+            	});
                 $.cookie("cc_cookie_accept", "cc_cookie_accept", {
                     expires: cookieExpires,
                     path: '/'
@@ -202,6 +215,20 @@
         	    // reload page to activate cookies
         	    location.reload();
         	});
+        });
+        
+        //cookie error accept
+        $('.cc-cookies-error a.cc-cookie-accept').click(function(g) {
+        	g.preventDefault();
+        	$.cookie("cc_cookie_accept", "cc_cookie_accept", {
+        	    expires: cookieExpires,
+        	    path: '/'
+        	});
+        	$.cookie("cc_cookie_decline", null, {
+        	    path: '/'
+        	});
+        	    // reload page to activate cookies
+        	    location.reload();
         });
 
     };
