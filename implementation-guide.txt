@@ -7,10 +7,11 @@ I've been trying to come up with a way of implementing a sensible solution to th
 
 I've come up with a tailorable solution, depending on how you or your client chooses to “interpret” the new law.
 
-I've interpreted the law as follows:
+Now that the ICO have announced "implied consent" is acceptable as long as you clearly signpost the Privacy Policy, I have interpreted the law as follows:
 
-- The website is only going to store cookies that are seen as essential to the functionality of the website. e.g. a shopping cart requires cookies for login, remembering cart items - they’re ok
-- The website is not going to store any other cookies unless the website visitor accepts - sadly this means analytics will not be enabled :(
+    The website is only going to store cookies that are seen as essential to the functionality of the website. e.g. a shopping cart requires cookies for login, remembering cart items - they’re ok
+    The website is going to store all other non essential cookies until the website visitor declines, as long as I have clearly signposted the Privacy Policy.
+
 
 UPDATE!! Due to further developments on the EU Cookie law, I've added a slightly softer option, an accept/decline message that you can display on just your policy page.
 
@@ -205,3 +206,8 @@ Options:
 cookieDiscreetLink: true,
 cookieDiscreetPosition: "topright",
 cookiePolicyLink: "/privacy-policy/"
+
+You want no message on any page, apart from the privacy policy page? 
+
+Options:
+cookieNoMessage: true

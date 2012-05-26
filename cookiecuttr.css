@@ -11,6 +11,8 @@
 .cc-cookies a:hover.cc-cookie-accept, .cc-cookies-error a:hover.cc-cookie-accept, .cc-cookies a:hover.cc-cookie-decline, .cc-cookies-error a:hover.cc-cookie-decline, .cc-cookies a:hover.cc-cookie-reset  { background: #000; -o-transition: background 0.5s ease-in; -webkit-transition: background 0.25s ease-in; -moz-transition: background 0.25s ease-in; }
 .cc-cookies-error a.cc-cookie-accept, .cc-cookies-error a.cc-cookie-decline { display: block; margin-top: 1em; }
 .cc-cookies.cc-discreet { width: auto; padding: 0.5em 1em; left: auto; top: auto; }
+.cc-cookies.cc-discreet a.cc-cookie-reset { background: none; text-shadow: none; padding: 0; text-decoration: underline; }
+.cc-cookies.cc-discreet a:hover.cc-cookie-reset { text-decoration: none; }
 
 @media screen and (max-width: 768px) {
 .cc-cookies a.cc-cookie-accept, .cc-cookies a.cc-cookie-decline, .cc-cookies a.cc-cookie-reset { display: block; margin: 1em 0; }
