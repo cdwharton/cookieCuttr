@@ -18,6 +18,7 @@ UPDATE!! Due to further developments on the EU Cookie law, I've added a slightly
 You can read more about the EU Cookie Law here:
 http://www.123-reg.co.uk/blog/security-issues/is-the-eus-cookie-law-confusing-you-too/
 http://www.ico.gov.uk/for_organisations/privacy_and_electronic_communications/the_guide/cookies.aspx
+http://chriswharton.me/2012/05/cookies-doing-nothing-isnt-the-right-answer/
 
 To try and explain the impact of declining (or not accepting) cookies I've added the following on to my company website in the privacy policy:
 
@@ -75,6 +76,23 @@ var s = document. getElementsByTagName('script')[0]; s.parentNode.insertBefore(g
 })();
 }
 </script>
+
+Or you can do the following to enabled UNTIL cookies are declined:
+<script>
+if (jQuery.cookie('cc_cookie_decline') == "cc_cookie_decline") {
+// do nothing
+} else {
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document. getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+}
+</script> 
 
 You just then need to call the function to run CookieCuttr - you can add this to your page, anywhere underneath the initial files you loaded in the head within the following code, the default setup will show the standard analytics message:
 $(document).ready(function () {
