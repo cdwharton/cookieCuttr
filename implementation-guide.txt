@@ -161,6 +161,8 @@ cookieDiscreetLinkText - edit the text you want to appear on the discreet option
 
 cookieDiscreetPosition - set to topleft by default, you can also set topright, bottomleft, bottomright. 
 
+cookieDomain - empty by default, add your domain name in here without www. or https:// or http:// to remove Google Analytics cookies on decline.    
+
 
 Implementing on a CMS?
 ##########################
@@ -229,3 +231,9 @@ You want no message on any page, apart from the privacy policy page?
 
 Options:
 cookieNoMessage: true
+
+
+You want to Delete Google Analytics Cookies when declined? 
+
+Options:
+cookieDomain: "yourdomainhere.com"
