@@ -89,9 +89,11 @@ Options
 For more options, see the WIKI.
 
 ```
-cookieCutter - if you'd like to actively hide parts of your website set this to true, for example say you use a comments system that inserts cookies, you can put the div name in below to replace it with a cookie warning message.
+cookieCutter - if you'd like to actively hide parts of your website set this to true, for example say you use a
+comments system that inserts cookies, you can put the div name in below to replace it with a cookie warning message.
 
-cookieAnalytics - if you are just using a simple analytics package you can set this to true, it displays a simple default message with no privacy policy link - this is set to true by default.
+cookieAnalytics - if you are just using a simple analytics package you can set this to true, it displays a simple
+default message with no privacy policy link - this is set to true by default.
 
 cookieDeclineButton - if you'd like a decline button to (ironically) write a cookie into the browser then set this to true.
 
@@ -101,9 +103,11 @@ cookieResetButton - if you'd like a reset button to delete the accept or decline
 
 cookieOverlayEnabled - don't want a discreet toolbar? this makes the whole message into a 100% height
 
-cookiePolicyLink - if applicable, enter the link to your privacy policy in here - this is as soon as cookieAnalytics is set to false;
+cookiePolicyLink - if applicable, enter the link to your privacy policy in here - this is as soon as cookieAnalytics
+is set to false;
 
-cookieMessage - edit the message you want to appear in the cookie bar, remember to keep the {{cookiePolicyLink}} variable in tact so it inserts your privacy policy link.
+cookieMessage - edit the message you want to appear in the cookie bar, remember to keep the {{cookiePolicyLink}} variable
+in tact so it inserts your privacy policy link.
 
 cookieAnalyticsMessage - edit the message you want to appear, this is the default message.
 
@@ -111,9 +115,11 @@ cookieWhatAreTheyLink - edit the link for the 'What are Cookies' link.
 
 cookieErrorMessage - edit the message you'd like to appear in place of the functionality
 
-cookieNotificationLocationBottom - this is false by default, change it to true and the cookie notification bar will show at the bottom of the page instead, please note this will remain at the top for mobile and iOS devices and Internet Explorer 6.
+cookieNotificationLocationBottom - this is false by default, change it to true and the cookie notification bar will show at
+the bottom of the page instead, please note this will remain at the top for mobile and iOS devices and Internet Explorer 6.
 
-cookieDisable - list elements comma separated in here that you want to disable, this will only work if cookieCutter is set to true.
+cookieDisable - list elements comma separated in here that you want to disable, this will only work if cookieCutter is set
+to true.
 
 cookieAcceptButtonText - you can change the text of the green accept button.
 
@@ -133,7 +139,8 @@ cookieDiscreetLinkText - edit the text you want to appear on the discreet option
 
 cookieDiscreetPosition - set to topleft by default, you can also set topright, bottomleft, bottomright.
 
-cookieDomain - empty by default, add your domain name in here without www. or https:// or http:// to remove Google Analytics cookies on decline.
+cookieDomain - empty by default, add your domain name in here without www. or https:// or http:// to remove Google Analytics
+cookies on decline.
 ```
 
 Contributing to CookieCuttr
