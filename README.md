@@ -3,6 +3,12 @@ CookieCuttr
 
 A tailorable jQuery plugin to deal with the EU Cookie Law.
 
+Dependencies
+------------
+
+* [jQuery](https://github.com/jquery/jquery)
+* [jQuery.cookie](https://github.com/carhartl/jquery-cookie)
+
 Useage
 ------
 
@@ -76,12 +82,6 @@ Using WordPress?
 ----------------
 
 A Wordpress version is available [here](http://cookiecuttr.com/wordpress-plugin/).
-
-Dependencies
-------------
-
-* [jQuery](https://github.com/jquery/jquery)
-* [jQuery.cookie](https://github.com/carhartl/jquery-cookie)
 
 Options
 -------
