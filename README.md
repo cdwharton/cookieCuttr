@@ -86,7 +86,7 @@ A Wordpress version is available [here](http://cookiecuttr.com/wordpress-plugin/
 Options
 -------
 
-For options, see the [WIKI](wiki/Options).
+For options, see the [WIKI](/weare2ndfloor/cookieCuttr/wiki/Options).
 
 Contributing to CookieCuttr
 ---------------------------
