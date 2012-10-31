@@ -86,7 +86,7 @@ A Wordpress version is available [here](http://cookiecuttr.com/wordpress-plugin/
 Options
 -------
 
-For options, see the WIKI.
+For options, see the [WIKI](wiki/Options).
 
 Contributing to CookieCuttr
 ---------------------------
@@ -101,8 +101,8 @@ Contributing to CookieCuttr
 Credits
 -------
 
-* [weare2ndfloor](https://github.com/weare2ndfloor)
-* [unsymbol](https://github.com/unsymbol)
+* [weare2ndfloor](https://github.com/weare2ndfloor) for the plugin
+* [unsymbol](https://github.com/unsymbol) for organising the implementation txt into a readme markdown file
 
 Copyright
 ---------
